@@ -1,13 +1,12 @@
+import Header from "./components/Header"
 
 
 function App() {
 
   return (
-    <>
-      <div className="bg-blue-700 text-4xl" >
-        hello there
-      </div>
-    </>
+    <div className="w-full min-h-screen bg-blue-400 grid grid-rows-[1fr_4fr]">
+      <Header/>
+    </div>
   )
 }
 
