@@ -49,7 +49,7 @@ const styles = {
     input: "py-1 rounded text-center placeholder:text-cian-600 placeholder:font-semibold bg-cian-100 hover:border-2 hover:border-cian-300 focus:border-cian-200 ",
     title: "mb-2 text-cian-500 font-semibold",
     selectBox: "text-center font-semibold rounded py-1 cursor-pointer hover:bg-cian-300 hover:text-cian-600 bg-cian-300",
-    container: "grid gap-4 grid-cols-2 text-2xl",
+    container: "grid gap-4 grid-cols-2 md:grid-cols-3 text-2xl",
     activeSelectBox: "bg-cian-300 text-cian-600",
     normalSelectBox: 'bg-cian-600 text-cian-200',
 }

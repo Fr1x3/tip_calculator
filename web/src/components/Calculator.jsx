@@ -34,10 +34,13 @@ function Calculator(){
     }
 
     return (
-        <div className="bg-white shadow rounded-t-2xl p-4 grid gap-3 grid-rows-[1fr_3fr_1fr_3fr]">
-            <Input name='bill' Icon={IconDollar}  title="Bill" numberValue={data.bill} handleChange={onInputChanged} />
-            <Tips handleTipSelected={handleRate}  rate={data.tipRate}/>
-            <Input name='people' Icon={IconPerson} title="Number of people" numberValue={data.people} handleChange={onInputChanged}/>
+        <div className="bg-white shadow rounded-t-2xl p-4 grid gap-3 grid-rows-[5fr_3fr] md:grid-cols-2 lg:gap-5 md:grid-rows-1 md:h-fit md: w-5/6 lg:w-3/5  md:rounded-2xl md:shadow-lg ">
+            <div className="grid grid-rows-[1fr_3fr_1fr] lg:grid-rows-[1fr_2fr_1fr]">
+                <Input name='bill' Icon={IconDollar}  title="Bill" numberValue={data.bill} handleChange={onInputChanged} />
+                <Tips handleTipSelected={handleRate}  rate={data.tipRate}/>
+                <Input name='people' Icon={IconPerson} title="Number of people" numberValue={data.people} handleChange={onInputChanged}/>
+            </div>
+            
             <Summary total={avgTotalPaid} tip={avgTipPaid} handleClick={reset}/>
         </div>
     )
