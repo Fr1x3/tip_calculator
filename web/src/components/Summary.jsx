@@ -1,6 +1,7 @@
 function Summary({
     total = 0.0,
-    tip = 0.0
+    tip = 0.0,
+    handleClick= ()=> {}
 }){
     return(
         <div className="rounded-lg grid grid-row-3 gap-4 p-4 bg-cian-600">
@@ -10,7 +11,7 @@ function Summary({
                     <p className={styles.subtitle}>/ person</p>
                 </div>
                 <div className={styles.amount}>
-                <span className={styles.dollar}>$</span> {tip}
+                <span className={styles.dollar}>$</span> {tip.toFixed(2)}
                 </div>
             </div>
             <div className="flex justify-between items-center text">
@@ -19,10 +20,10 @@ function Summary({
                     <p className={styles.subtitle}>/ person</p>
                 </div>
                 <div className={styles.amount}>
-                    <span className={styles.dollar}>$</span> {total}
+                    <span className={styles.dollar}>$</span> {total.toFixed(2)}
                 </div>
             </div>
-            <button className={`${styles.btn} ${ (total <= 0) && styles.btnDisable}`}>reset</button>
+            <button onClick={handleClick} className={`${styles.btn} ${ (total <= 0) && styles.btnDisable}`}>reset</button>
         </div>
     )
 }
