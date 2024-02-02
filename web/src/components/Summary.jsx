@@ -22,7 +22,7 @@ function Summary({
                     <span className={styles.dollar}>$</span> {total}
                 </div>
             </div>
-            <button className={styles.btn}>reset</button>
+            <button className={`${styles.btn} ${ (total <= 0) && styles.btnDisable}`}>reset</button>
         </div>
     )
 }

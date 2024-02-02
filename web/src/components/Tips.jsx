@@ -1,22 +1,20 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-function Tips(){
-    const [customTipRate, setCustomTipRate] = useState(0.0)
-    const [selectedTipRate, setSelectedTipRate] = useState(0.0)
-    const [isSelectedId, setIsSelectedId] = useState(-1)
-    // set the tip rate selected or custom
-    //const tipRate = customTipRate || selectedTipRate
+function Tips({
+    rate,
+    handleTipSelected,
+}){
+    
+    let selectedId = -1
 
     function onCustomTipChanged(event){
-        setCustomTipRate(event.target.value)
-        setSelectedTipRate(0.0)
-        setIsSelectedId(-1)
+        handleTipSelected(event.target.value)
+        selectedId = -1
     }
 
     function onTipSelected(tip){
-        setSelectedTipRate(tip.rate)
-        setIsSelectedId(tip.id)
-        setCustomTipRate(0.0)   
+        handleTipSelected(tip.rate)
+        selectedId = tip.id
     }
 
     return (
@@ -27,16 +25,17 @@ function Tips(){
                     <div 
                         key={tip.id} 
                         onClick={() => onTipSelected(tip)}
-                        className={`${styles.selectBox} ${(isSelectedId === tip.id) && styles.activeSelectBox}`}
+                        className={`${styles.selectBox} ${(selectedId === tip.id) && styles.activeSelectBox}`}
                     >
                         {tip.rate}%
                     </div>
                 ))}
                 <input 
+                name="rate"
                     type="number" 
                     placeholder="Custom" 
                     className={styles.input}
-                    value={customTipRate > 0 ? customTipRate : ''}
+                    value={ !tipRates.some((e) => e.rate === rate) ? rate: '' }  // only show for custom rates
                     onChange={onCustomTipChanged}
                 />
             </div>

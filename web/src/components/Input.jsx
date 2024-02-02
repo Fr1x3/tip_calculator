@@ -3,7 +3,8 @@ function Input({
     numberValue= 0,
     handleChange= () => {},
     Icon,
-    title
+    title,
+    name
 }){
 
     return (
@@ -12,6 +13,7 @@ function Input({
             <div className=" relative p-0  ">
                 <span className="absolute top-1/2 -translate-y-1/2 left-3"><img src={Icon}/></span>
                 <input 
+                    name={name}
                     type="number" 
                     value={numberValue}
                     onChange={handleChange}
