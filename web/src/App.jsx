@@ -5,7 +5,7 @@ import Header from "./components/Header"
 function App() {
 
   return (
-    <div className="w-full min-h-screen bg-cian-200 grid grid-rows-[1fr_4fr] justify-items-center">
+    <div className="w-full min-h-screen bg-cian-200 grid grid-rows-[1fr_4fr] md:justify-items-center">
       <Header/>
       <Calculator/>
     </div>

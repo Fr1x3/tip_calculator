@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 function Tips({
     rate,
     handleTipSelected,
 }){
-    
     const [selectedId, setSelectedId] = useState(-1)
     function onCustomTipChanged(event){
         handleTipSelected(event.target.value)

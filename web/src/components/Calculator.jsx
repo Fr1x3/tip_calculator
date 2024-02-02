@@ -34,16 +34,21 @@ function Calculator(){
     }
 
     return (
-        <div className="bg-white shadow rounded-t-2xl p-4 grid gap-3 grid-rows-[5fr_3fr] md:grid-cols-2 lg:gap-5 md:grid-rows-1 md:h-fit md: w-5/6 lg:w-3/5  md:rounded-2xl md:shadow-lg ">
-            <div className="grid grid-rows-[1fr_3fr_1fr] lg:grid-rows-[1fr_2fr_1fr]">
+        <div className={`${styles.container} ${styles.containerScreens}`}>
+            <div className={`${styles.innerContainer}`}>
                 <Input name='bill' Icon={IconDollar}  title="Bill" numberValue={data.bill} handleChange={onInputChanged} />
                 <Tips handleTipSelected={handleRate}  rate={data.tipRate}/>
                 <Input name='people' Icon={IconPerson} title="Number of people" numberValue={data.people} handleChange={onInputChanged}/>
             </div>
-            
             <Summary total={avgTotalPaid} tip={avgTipPaid} handleClick={reset}/>
         </div>
     )
 }
 
 export default Calculator
+
+const styles = {
+    container: "bg-white shadow rounded-t-2xl p-4 grid gap-3 grid-rows-[5fr_3fr] w-full",
+    containerScreens: "md:grid-cols-2 md:gap-5 md:grid-rows-1 md:h-fit md:w-5/6 md:rounded-2xl md:shadow-lg lg:w-3/5",
+    innerContainer: "grid grid-rows-[1fr_3fr_1fr] lg:grid-rows-[1fr_2fr_1fr]",
+}
